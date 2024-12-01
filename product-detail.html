@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宅配商品</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 基本樣式設置 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f6e8dc;
+            color: #4b3621;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        .product-header {
+            text-align: center;
+            padding: 20px 0;
+            color: #8a5a44;
+        }
+
+        .product-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .product-header p {
+            font-size: 1.2em;
+            color: #4b3621;
+        }
+
+        .product-image {
+            display: flex;
+            /* 使用 Flexbox */
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中（如果有高度限制） */
+            margin: 20px 0;
+        }
+
+        .product-image img {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .product-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            filter: brightness(1.1);
+        }
+
+
+
+
+
+        .product-details {
+            padding: 20px 0;
+        }
+
+        .product-details h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #8a5a44;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .product-details .content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            line-height: 1.8;
+            margin: 0 auto;
+            font-size: 1.1em;
+            max-width: 800px;
+            background-color: #fdf6f0;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .product-button a {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #d88a64;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .product-button a:hover {
+            background-color: #bf7040;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 表單樣式 */
+        .dropdown-form {
+            margin-top: 30px;
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #f9f3ee;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-form label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: block;
+            color: #8a5a44;
+        }
+
+        .dropdown-form select {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-form select:focus {
+            outline: none;
+            border-color: #d88a64;
+            box-shadow: 0 0 8px rgba(216, 138, 100, 0.5);
+        }
+
+        /* 導航欄樣式 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #8a5a44;
+            padding: 10px 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.1em;
+        }
+
+        nav .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        nav .social-icons a {
+            color: #ffffff;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        nav .social-icons a:hover {
+            color: #d88a64;
+            /* 按鈕 hover 更深橙棕色 */
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="#">首頁</a>
+            <a href="#">商品分類</a>
+            <a href="#">聯繫我們</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://line.me" target="_blank" title="LINE">
+                <i class="fab fa-line"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="product-header">
+            <h1>讓我魂牽夢縈的麻奶牛肉麵</h1>
+            <p>獨家配方，讓您體驗不一樣的美味。</p>
+        </div>
+
+        <div class="product-image">
+            <img src="images/beef.jpg" alt="限定四川口味麻奶半筋半肉牛肉麵">
+        </div>
+
+        <div class="product-details">
+            <h2>商品詳細介紹</h2>
+            <div class="content">
+                <p>這款牛肉麵傳承了三代的家傳秘方，從選材到烹調都注入了滿滿的用心。廚師嚴選高品質的牛肉，搭配新鮮採購的蔬菜，每一口都能感受到自然的鮮甜。</p>
+                <p>經過長時間的慢火燉煮，湯頭融合了牛骨的濃郁與多種香料的細膩，散發出令人垂涎的香氣。牛肉入口即化，筋肉分明，保留了最天然的口感與嚼勁。</p>
+                <p>搭配Q彈的麵條，無論是喜歡濃厚湯頭的您，還是追求細膩口感的饕客，這碗牛肉麵都能滿足您的味蕾。此外，我們還附上特製辣醬和香油，讓您可以自由調整，創造專屬的風味。</p>
+                <p>不僅是味道上的極致體驗，這款牛肉麵更是對傳統與創新的完美詮釋。無論是家庭聚餐還是單獨享用，它都能為您的餐桌增添一份溫馨與滿足感。</p>
+            </div>
+
+        </div>
+
+        <div class="dropdown-form">
+            <label for="quantity">選擇購買數量：</label>
+            <select id="quantity">
+                <option value="1">1組(3包)</option>
+                <option value="2">2組(6包)</option>
+                <option value="3">3組(9包)</option>
+                <option value="5">5組(12包)</option>
+            </select>
+        </div>
+
+        <div class="product-button">
+            <a href="#">立即購買</a>
+        </div>
+    </div>
+</body>
+
+</html>
